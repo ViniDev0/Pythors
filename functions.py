@@ -1,13 +1,15 @@
-def validator():
+def validator(login, password):
   attempts = 0
-  attemptsLimit = 3
+  attemptsLimit = 2
   while (attempts < attemptsLimit):
-    login = getDataUsername()
-    password = getDataPasskey()
-    if login == 'admin01' and password == 8080:
+    
+    if login == 'admin01' and password == "8080":
       print(f"Access Granted, {login}")
       return
-    attempts += 1
+    else:
+      attempts += 1
+      getDataUsername()
+      getDataPasskey()
     if attempts >= attemptsLimit:
       print("Access Denied due to attempts deplention")
 def getDataUsername():
@@ -16,9 +18,11 @@ def getDataUsername():
   return username
 
 def getDataPasskey():
-  key = int(input("Password:"))
+  key = input("Password: ")
   
   return key
 
 
-validator()
+login = getDataUsername()
+password = getDataPasskey()
+validator(login, password)
