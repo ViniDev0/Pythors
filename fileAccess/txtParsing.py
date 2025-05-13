@@ -1,4 +1,5 @@
-with open("./txtAccess.txt", "r") as file:
+path = "../wordLists/txtAccess.txt"
+with open(path, "r") as file:
   fileText = file.read()
 
 randomWords = fileText.split()
